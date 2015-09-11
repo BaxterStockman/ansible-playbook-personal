@@ -1,13 +1,7 @@
 ---
 - hosts: all
   roles:
-    - role: site-modules
-  tasks:
-    - name: install glibc
-      pacman:
-        name: glibc
-        state: latest
-      become: yes
+    - role: ansible-role-site-modules
 
   vars:
     site_modules:

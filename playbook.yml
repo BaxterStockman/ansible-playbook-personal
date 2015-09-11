@@ -1,14 +1,16 @@
 ---
 # sample playbook for site-modules
 - hosts: all
-  roles:
-    - role: site-modules
   tasks:
+    - name: install glibc
+      pacman:
+        name: glibc
+        state: latest
+      become: yes
     - name: install aur packages with makepkg
       makepkg:
         name: "{{ item }}"
         state: present
-        build_dir: '/tmp/makepkg'
       become: yes
       with_items:
         - jansson
