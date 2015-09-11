@@ -1,0 +1,26 @@
+---
+# sample playbook for site-modules
+- hosts: all
+  roles:
+    - role: site-modules
+  tasks:
+    - name: install aur packages with makepkg
+      makepkg:
+        name: "{{ item }}"
+        state: present
+        build_dir: '/tmp/makepkg'
+      become: yes
+      with_items:
+        - jansson
+        - jshon
+        - packer
+      tags:
+        - makepkg
+
+    - name: install aur packages with packer
+      packer:
+        name: downgrade
+        state: present
+      become: yes
+      tags:
+        - packer

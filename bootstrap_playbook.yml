@@ -1,0 +1,20 @@
+---
+- hosts: all
+  roles:
+    - role: site-modules
+  tasks:
+    - name: install glibc
+      pacman:
+        name: glibc
+        state: latest
+      become: yes
+
+  vars:
+    site_modules:
+      git:
+        - repo: 'https://github.com/BaxterStockman/ansible-packer.git'
+          clone: yes
+        - repo: 'https://github.com/BaxterStockman/ansible-makepkg.git'
+          version: aur_url_fix
+          clone: yes
+...
