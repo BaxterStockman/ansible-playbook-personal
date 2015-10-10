@@ -1,3 +1,21 @@
 - src: https://github.com/BaxterStockman/ansible-role-site-modules.git
+  name: site-modules
 
+#- src: https://github.com/BaxterStockman/ansible-makepkg.git
+#  name: makepkg
 
+- src: https://github.com/BaxterStockman/ansible-packer.git
+  version: remotes/origin/galaxy
+  name: packer
+
+- src: https://github.com/BaxterStockman/ansible-bootstrap.git
+  name: bootstrap
+
+- src: https://github.com/BaxterStockman/ansible-role-nginx.git
+  name: nginx
+
+- src: https://github.com/BaxterStockman/ansible-role-samba.git
+  name: samba
+
+- src: https://github.com/BaxterStockman/ansible-role-sabnzbd.git
+  name: sabnzbd
